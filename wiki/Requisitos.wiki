@@ -1,0 +1,8 @@
+<H1><b>Requisitos Funcionais</b></H1>
+<br>
+Em breve! 
+____________________________________
+
+<H1><b>Requisitos Não Funcionais</b></H1>
+<br>
+Em breve!
