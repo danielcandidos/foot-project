@@ -1,11 +1,11 @@
 <H1><b>Equipe</b></H1>
-<br>
-ºDaniel Cândido
 
-°José Clodoalves
+   º Daniel Cândido
 
-ºRaffael Vieira
+   ° José Clodoalves
 
-ºRaphael Alves
+   º Raffael Vieira
 
-ºThiago Félix
+   º Raphael Alves
+
+   º Thiago Félix
