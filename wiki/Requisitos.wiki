@@ -17,10 +17,10 @@
 || *Descrição* ||
 || Filtrar jogadores de acordo com algum critério determinado. ||
 
-==RF004 - Filtro==
+==RF004 - Cadastro de jogadores==
 
 || *Descrição* ||
-|| Filtrar jogadores de acordo com algum critério determinado. ||
+|| Permite ao administrador criar ou modificar as informações de um dado jogador. ||
 
 ---------------------------
 
