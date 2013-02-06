@@ -1,6 +1,6 @@
 ---------------------------
 
-==UC01 - Cadastrar clientes==
+==UC001 - Pesquisa nominal==
 
 || *Objetivo* || Cadastrar cliente. ||
 || *Descrição* || Uma pessoa interessada em adquirir o serviço iCards deverá fazer o cadastro para ter uma conta de usuário. ||
@@ -20,7 +20,7 @@
 
 ---------------------------
 
-==UC02 - Acessar o sistema==
+==UC002 - Pesquisar por lista==
 
 || *Objetivo* || Acessar o sistema através de um login. ||
 || *Descrição* || Cada usuário deverá fazer um login para que o sistema dê acesso as informações restritas de acordo com o nível do usuário. ||
@@ -41,7 +41,7 @@
 
 ---------------------------
 
-==UC03 - Visualizar crédito e histórico de compras==
+==UC003 - Visualizar jogador==
 
 || *Objetivo* || Visualizar crédito e histórico de compras. ||
 || *Descrição* || Após o acesso ao sistema, o usuário poderá visualizar informações como o histórico de suas compras (lugar da compra, data, horário e valor da compra)e o saldo de crédito referente a conta de usuário. ||
@@ -61,7 +61,7 @@
 
 -----------------------
 
-==UC04 - Alterar senha==
+==UC004 - Comparar jogador==
 
 || *Objetivo* || Alterar a senha de usuário. ||
 || *Descrição* ||  ||
@@ -81,7 +81,7 @@
 
 -----------------------
 
-==UC05 - Alterar senha==
+==UC005 - Filtrar estatísticas==
 
 || *Objetivo* || Alterar a senha de usuário. ||
 || *Descrição* ||  ||
@@ -101,7 +101,7 @@
 
 -----------------------
 
-==UC06 - Alterar senha==
+==UC006 - Gerar Relatório==
 
 || *Objetivo* || Alterar a senha de usuário. ||
 || *Descrição* ||  ||
