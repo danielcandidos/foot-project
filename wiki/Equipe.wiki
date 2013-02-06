@@ -1,4 +1,4 @@
-<H1><b>Equipe</b></H1>
+<H1><b>Desenvolvedores</b></H1>
 
   º Daniel Cândido (danielcands@gmail.com)
 
