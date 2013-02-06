@@ -31,17 +31,17 @@
 
 ---------------------------
 
-==NF1 - Armazenamento dos dados==
+==NF001 - Armazenamento dos dados==
 
 || *Descrição* ||
 || Dados de entrada e saída armazenados em banco de dados. ||
 
-==NF2 - Interface simplificada==
+==NF002 - Interface simplificada==
 
 || *Descrição* ||
 || O sistema será apresentado com uma interface simples e intuitiva, para facilitar ao máximo o uso do mesmo. A navegação deverá fornecer ao usuário as opções possíveis, evitando desta forma escolhas que possam apresentar conflitos. ||
 
-==NF3 - Ambiente de desenvolvimento==
+==NF003 - Ambiente de desenvolvimento==
 
 || *Descrição* ||
 || JAVA será a linguagem de desenvolvimento padrão utilizada em todo projeto. ||
