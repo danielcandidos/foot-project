@@ -42,18 +42,17 @@
 
 ==UC003 - Visualizar jogador==
 
-|| *Objetivo* || Visualizar crédito e histórico de compras. ||
-|| *Descrição* || Após o acesso ao sistema, o usuário poderá visualizar informações como o histórico de suas compras (lugar da compra, data, horário e valor da compra)e o saldo de crédito referente a conta de usuário. ||
-|| *Ator* || Responsável ou usuário menor de idade. ||
-|| *Prioridade* || Média. ||
-|| *Pré-condição* || O usuário estar logado no sistema como usuário menor de idade ou Responsável.  ||
-|| *Pós-condições* || O usuário terá acesso ao histórico das compras e ao saldo de crédito. ||
+|| *Objetivo* || Exibição dos dados e estatísticas do atleta. ||
+|| *Descrição* || Serão visualizados todos os dados (nome, altura, peso e data de nascimento) e estatísticas principais (jogos, gols, assistências, cartões amarelos, cartões vermelhos, faltas cometidas, faltas sofridas, finalizações e impedimentos). ||
+|| *Ator* || Usuário. ||
+|| *Prioridade* || Alta. ||
+|| *Pré-condição* || O jogador ser selecionado.  ||
+|| *Pós-condições* || Gerar relatório, comparar jogador ou filtrar estatísticas. ||
 
 ==Cenários principais de sucesso==
 
 || *Usuário* ||
-|| 1 - Ao clicar no ícone "Visualizar histórico de compras", o usuário terá acesso a todas informações de compras referentes à conta de usuário, como logar onde a compra foi realizada, datá, horário e valor da compra. Poderá fazer a filtragem de informações por mês.  ||
-|| 2 - Ao clicar no ícone "Visualizar saldo de crédito", o usuário terá acesso ao saldo de crédito referente a conta de usuário.||
+|| 1 - Os dados e estatísticas do jogador são exibidos.  ||
 
 || *Fluxos alternativos* ||
 || 1.1 ||
