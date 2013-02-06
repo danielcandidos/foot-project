@@ -61,21 +61,21 @@
 
 ==UC004 - Comparar jogador==
 
-|| *Objetivo* || Alterar a senha de usuário. ||
-|| *Descrição* ||  ||
-|| *Ator* || Responsável. ||
+|| *Objetivo* || Comparar dados e estatísticas de dois jogadores. selecionados. ||
+|| *Descrição* || Serão visualizados lado a lado todos os dados e estatísticas dos jogadores selecionados pelo usuário. ||
+|| *Ator* || Usuário. ||
 || *Prioridade* || Média. ||
-|| *Pré-condição* || Estar logado no sistema. ||
-|| *Pós-condições* || Terá alterado a senha de usuário. ||
+|| *Pré-condição* || Visualizar jogador. ||
+|| *Pós-condições* || Gerar relatório ou filtrar estatísticas. ||
 
 ==Cenários principais de sucesso==
 
 || *Usuário* ||
-|| 1 - Ao acessar o sistema como Responsável, o usuário poderá clicar nos itens "Configuração" e "Alterar senha" para alterar sua senha de acesso ao sistema. ||
+|| 1 - As estatísticas dos dois jogadores são exibidas. ||
 
 
 || *Fluxos alternativos* ||
-|| 1.1 Ao digitar a nova senha e depois tentar concluir a alteração, se ela não estiver de acordo com a especificação para criar senha o sistema retornará a mensagem de erro: "<i>*ERRO 005 - A senha deverá conter no mínimo dois números. Tente novamente.*</i>"  ||
+|| 1.1 ||
 
 -----------------------
 
