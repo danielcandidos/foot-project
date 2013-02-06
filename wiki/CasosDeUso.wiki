@@ -2,21 +2,21 @@
 
 ==UC001 - Pesquisa nominal==
 
-|| *Objetivo* || Cadastrar cliente. ||
-|| *Descrição* || Uma pessoa interessada em adquirir o serviço iCards deverá fazer o cadastro para ter uma conta de usuário. ||
-|| *Ator* || Funcionário do banco. ||
+|| *Objetivo* || Encontrar o jogador desejado. ||
+|| *Descrição* || O usuário digitará o nome do atleta pretendido. ||
+|| *Ator* || Usuário. ||
 || *Prioridade* || Alta. ||
-|| *Pré-condição* || O sistema deve estar em condições para executar esta função. ||
-|| *Pós-condições* || O usuário será cadastrado com sucesso e possuirá uma conta no sistema. ||
+|| *Pré-condição* || Nenhuma. ||
+|| *Pós-condições* || Selecionar jogador. ||
 
 ==Cenários principais de sucesso==
 
 || *Usuário* ||
-|| 1 - No cadastro, o usuário solicitante do serviço, deverá fornecer informações como: Nome,data de nascimento, CPF, endereço completo, telefone. ||
+|| 1 - Jogador encontrado. ||
 
 
 || *Fluxos alternativos* ||
-|| 1.1 ||
+|| 1.Caso seja digitado um nome de jogador inexistente no campo destinado a busca retorna uma mensagem de erro: '' Jogador não encontrado ''. ||
 
 ---------------------------
 
