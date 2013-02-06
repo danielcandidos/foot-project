@@ -1,8 +1,58 @@
 <H1><b>Requisitos Funcionais</b></H1>
 
-Em breve! 
+---------------------------
+
+==RF001 - Busca de atletas==
+
+|| *Descrição* ||
+|| Permite ao usuário buscar e selecionar qualquer atleta previamente inserido no acervo. Assim, visualizando seus dados e estatísticas. ||
+
+---------------------------
+
+==RF002 - Comparação de atletas==
+
+|| *Descrição* ||
+|| O software deve permitir que o usuário compare os dados entre dois atletas selecionados. ||
+
+---------------------------
+
+==RF003 - Filtro==
+
+|| *Descrição* ||
+|| Filtrar jogadores de acordo com algum critério determinado. ||
+
+---------------------------
+
+==RF004 - Filtro==
+
+|| *Descrição* ||
+|| Filtrar jogadores de acordo com algum critério determinado. ||
+
+---------------------------
+
 ____________________________________
 
 <H1><b>Requisitos Não Funcionais</b></H1>
 
-Em breve!
+---------------------------
+
+==NF1 - Armazenamento dos dados==
+
+|| *Descrição* ||
+|| Dados de entrada e saída armazenados em banco de dados. ||
+
+---------------------------
+
+==NF2 - Interface simplificada==
+
+|| *Descrição* ||
+|| O sistema será apresentado com uma interface simples e intuitiva, para facilitar ao máximo o uso do mesmo. A navegação deverá fornecer ao usuário as opções possíveis, evitando desta forma escolhas que possam apresentar conflitos. ||
+
+---------------------------
+
+==NF3 - Ambiente de desenvolvimento==
+
+|| *Descrição* ||
+|| JAVA será a linguagem de desenvolvimento padrão utilizada em todo projeto. ||
+
+---------------------------
