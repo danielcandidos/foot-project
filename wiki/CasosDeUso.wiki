@@ -81,21 +81,21 @@
 
 ==UC005 - Filtrar estatísticas==
 
-|| *Objetivo* || Alterar a senha de usuário. ||
-|| *Descrição* ||  ||
-|| *Ator* || Responsável. ||
+|| *Objetivo* || Exibir estatísticas filtradas de cada atleta. ||
+|| *Descrição* || O usuário escolherá qual tipo de filtro irá usar (temporada, clube ou campeonato) seguidamente o atributo referente a cada filtro. Sendo assim, mostradas as estatísticas filtradas do jogador. ||
+|| *Ator* || Usuário. ||
 || *Prioridade* || Média. ||
-|| *Pré-condição* || Estar logado no sistema. ||
-|| *Pós-condições* || Terá alterado a senha de usuário. ||
+|| *Pré-condição* || Visualizar jogador ou comparar jogador. ||
+|| *Pós-condições* || Nenhuma. ||
 
 ==Cenários principais de sucesso==
 
 || *Usuário* ||
-|| 1 - Ao acessar o sistema como Responsável, o usuário poderá clicar nos itens "Configuração" e "Alterar senha" para alterar sua senha de acesso ao sistema. ||
+|| 1 - A estatística pretendida do(s) jogador(es) é exibida. ||
 
 
 || *Fluxos alternativos* ||
-|| 1.1 Ao digitar a nova senha e depois tentar concluir a alteração, se ela não estiver de acordo com a especificação para criar senha o sistema retornará a mensagem de erro: "<i>*ERRO 005 - A senha deverá conter no mínimo dois números. Tente novamente.*</i>"  ||
+|| 1.1 ||
 
 -----------------------
 
