@@ -35,7 +35,7 @@
 || 1 - Jogador encontrado. ||
 
 || *Fluxos alternativos* ||
-|| 1.1*||
+|| 1.1 ||
 
 
 ---------------------------
