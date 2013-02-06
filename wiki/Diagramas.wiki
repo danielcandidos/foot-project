@@ -1,5 +1,4 @@
 ||<a href="http://code.google.com/p/foot-project/">Início</a>||<a href="http://code.google.com/p/foot-project/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/foot-project/wiki/Descricao">Descrição do Sistema</a>||<a href="http://code.google.com/p/foot-project/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/foot-project/wiki/CasosDeUso">Casos de Uso</a>|| *Diagramas* ||
 
 <H1><b>Diagramas</b></H1>
-<br>
-Em breve! 
+Em breve.
