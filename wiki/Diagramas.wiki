@@ -5,3 +5,5 @@
 ==Diagrama de Casos de Uso==
 
 <img src="http://footproject.webs.com/diagramaCasosdeUso.png" align="left">
+
+</b>
