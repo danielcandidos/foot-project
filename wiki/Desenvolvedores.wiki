@@ -1,7 +1,12 @@
 ||<a href="http://code.google.com/p/foot-project/">Início</a> || *Desenvolvedores* ||<a href="http://code.google.com/p/foot-project/wiki/Descricao">Descrição do Sistema</a>||<a href="http://code.google.com/p/foot-project/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/foot-project/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/foot-project/wiki/Diagramas">Diagramas</a>||
 
 
-||<a href="http://code.google.com/p/sistema-hoteleiro-ufrpe/"> https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-ash4/481449_531323326899996_912784405_n.jpg </a>||<a href="http://code.google.com/p/sistema-hoteleiro-ufrpe/wiki/04Equipe"> https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/529295_531319616900367_154840166_n.jpg </a>||<a href="http://code.google.com/p/sistema-hoteleiro-ufrpe/wiki/07Modelagem?ts=1360346819&updated=07Modelagem"> *MPOO* </a>||<a href="http://code.google.com/p/sistema-hoteleiro-ufrpe/w/list"> https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash3/538182_531292143569781_1383701199_n.jpg </a>||
+|| <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/70697_1201243587_1961705851_q.jpg" align="left"> || Daniel Cândido (danielcands@gmail.com) ||
+|| <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc6/276183_100000171103342_1896096108_q.jpg" align="left"> || José Clodoalves (jrjcsj@gmail.com) ||
+|| *foto* || Raffael Vieira (raffaelvramos@gmail.com) ||
+|| <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/173365_1213913491_2073442362_q.jpg" align="left"> || Raphael Alves (raphael.behemoth@gmail.com) ||
+|| <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/275230_100002820771180_477279123_q.jpg" align="left"> || Thiago Félix (thiagosfpreto@gmail.com) ||
+
 
 <H1><b>Desenvolvedores</b></H1>
 
