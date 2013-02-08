@@ -6,4 +6,4 @@
 
 <img src="http://footproject.webs.com/diagramaCasosdeUso.png" align="left">
 
-</b>
+<b></b>
