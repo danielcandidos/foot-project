@@ -15,7 +15,7 @@
 || *Descrição* ||
 || O software deve permitir que o usuário compare os dados entre dois atletas selecionados. ||
 
-==RF003 - Filtro==
+==RF003 - Filtro de Estatísticas==
 
 || *Descrição* ||
 || Filtrar jogadores de acordo com algum critério determinado. ||
