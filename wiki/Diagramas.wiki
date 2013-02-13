@@ -1,7 +1,5 @@
 ||<a href="http://code.google.com/p/foot-project/">Início</a>||<a href="http://code.google.com/p/foot-project/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/foot-project/wiki/Descricao">Descrição do Sistema</a>||<a href="http://code.google.com/p/foot-project/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/foot-project/wiki/CasosDeUso">Casos de Uso</a>|| *Diagramas* ||
 
-=Diagramas=
-
 ==Diagrama de Casos de Uso==
 
 <img src="http://footproject.webs.com/diagramaCasosdeUso.png" align="left">
