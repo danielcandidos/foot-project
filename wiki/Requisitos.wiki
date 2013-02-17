@@ -18,7 +18,7 @@
 ==RF003 - Filtro de Estatísticas==
 
 || *Descrição* ||
-|| Filtrar jogadores de acordo com algum critério determinado. ||
+|| A fim de otimizar o tempo de procura e melhorar a usabilidade do software, será utilizado um esquema de filtragem, onde o jogador que será comparado com o buscado pode ser procurado no sistema através da seleção do ano que atuou em um determinado time. ||
 
 ==RF004 - Cadastro de jogadores==
 
