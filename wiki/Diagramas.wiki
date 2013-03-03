@@ -3,7 +3,12 @@
 ==Diagrama de Casos de Uso==
 
 <img src="http://footproject.webs.com/diagrama_CasosdeUso.png" align="left">
-<img src="http://footproject.webs.com/diagrama_Classes.png" align="left">
+
+-------------------------------
+
+==Diagrama de Classes==
+
+<img src="http://footproject.webs.com/diagrama_Classes3.png" align="left">
 
 -------------------------------
 _______________________________________
