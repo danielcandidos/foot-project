@@ -2,7 +2,8 @@
 
 ==Diagrama de Casos de Uso==
 
-<img src="http://dl.dropbox.com/u/67414138/UseCase%20Diagram0.png" align="left">
+<img src="http://footproject.webs.com/diagrama_CasosdeUso.png" align="left">
+<img src="http://footproject.webs.com/diagrama_Classes.png" align="left">
 
 -------------------------------
 _______________________________________
