@@ -1,12 +1,12 @@
 ||<a href="http://code.google.com/p/foot-project/">Início</a>||<a href="http://code.google.com/p/foot-project/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="http://code.google.com/p/foot-project/wiki/Descricao">Descrição do Sistema</a>||<a href="http://code.google.com/p/foot-project/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/foot-project/wiki/CasosDeUso">Casos de Uso</a>|| *Diagramas* ||
 
-==Diagrama de Casos de Uso==
+=Diagrama de Casos de Uso=
 
 <img src="http://footproject.webs.com/diagrama_CasosdeUso.png" align="left">
 -------------------------------
 
 
-==Diagrama de Classes==
+=Diagrama de Classes=
 
 <img src="http://footproject.webs.com/diagrama_Classes3.png" align="left">
 
