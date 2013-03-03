@@ -3,9 +3,8 @@
 ==Diagrama de Casos de Uso==
 
 <img src="http://footproject.webs.com/diagrama_CasosdeUso.png" align="left">
-<p>   </p>
-<p>   </p>
--------------------------------
+<p>-------------------------------</p>
+
 
 ==Diagrama de Classes==
 
