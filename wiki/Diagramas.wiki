@@ -2,8 +2,8 @@
 
 ==Diagrama de Casos de Uso==
 
-<p><img src="http://footproject.webs.com/diagrama_CasosdeUso.png" align="left"></p>
-
+<img src="http://footproject.webs.com/diagrama_CasosdeUso.png" align="left">
+<p></p>
 -------------------------------
 
 ==Diagrama de Classes==
