@@ -200,14 +200,14 @@ public class JFPesquisa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisualizarActionPerformed
-        new NewJFrame().setVisible(true);
+        new JFVisualiza().setVisible(true);
     }//GEN-LAST:event_jBVisualizarActionPerformed
 
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/footleague", "root","mysqlmysql");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/footleague", "root","mugen");
             String query = "select * from jogador where nome = ?";
             PreparedStatement stmt1 = con.prepareStatement(query);
             
