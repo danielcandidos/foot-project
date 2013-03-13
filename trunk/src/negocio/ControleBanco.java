@@ -13,7 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 /**
  *
- * @author gustavopereira
+ * @author danielCandido, raffaelVieira, raphaelAlves
  */
 public class  ControleBanco{
     static Connection con;
