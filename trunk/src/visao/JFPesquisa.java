@@ -10,6 +10,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import negocio.ControleBanco;
 
 /**
  *
@@ -42,16 +46,17 @@ public class JFPesquisa extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jBVisualizar = new javax.swing.JButton();
+        jBVisu = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jBBuscar = new javax.swing.JButton();
         jBClear = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextField1.setText("Buscar jogador");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cristiano Ronaldo", "Lionel Messi", "Neymar", "Balotelli" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cristiano Ronaldo", "Lionel Messi", "Neymar", "Balotelli", "Oscar" }));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Confere?"));
 
@@ -116,11 +121,11 @@ public class JFPesquisa extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jBVisualizar.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jBVisualizar.setText("Visualizar");
-        jBVisualizar.addActionListener(new java.awt.event.ActionListener() {
+        jBVisu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jBVisu.setText("Visualizar");
+        jBVisu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBVisualizarActionPerformed(evt);
+                jBVisuActionPerformed(evt);
             }
         });
 
@@ -144,6 +149,8 @@ public class JFPesquisa extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setText("=>");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,24 +160,26 @@ public class JFPesquisa extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBClear, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135))
-            .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                    .addComponent(jLabel7)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jBVisualizar)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jBClear, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(48, 48, 48))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(jBVisu)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -178,20 +187,19 @@ public class JFPesquisa extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(jComboBox1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jBClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jBVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBVisu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
 
@@ -199,58 +207,31 @@ public class JFPesquisa extends javax.swing.JFrame {
         setBounds((screenSize.width-469)/2, (screenSize.height-390)/2, 469, 390);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisualizarActionPerformed
-        new JFVisualiza2().setVisible(true);
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/footleague","root","mugen");
-            String query = "insert into jogador (nome_c, data_n, altura, peso, ultimo_clube, clube_atual )";
-            PreparedStatement stmt = con.prepareStatement(query);
-            
-            stmt.setString(1,jTextField1.getText());
-            
-            ResultSet rs1;
-            
-            rs1 = stmt.executeQuery();
-            
-            while (rs1.next()){
-                JFVisualiza2.jLabel15.setText(rs1.getString);
-            }
-        }catch (ClassNotFoundException e) {
-            System.out.println("Classe não encontrada: "+ e.getMessage());
-        }catch(SQLException e) {
-            System.out.println("Erro de SQL: "+e.getMessage());
-        }
-    }//GEN-LAST:event_jBVisualizarActionPerformed
+    private void jBVisuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisuActionPerformed
+        new JFVisualiza().setVisible(true);
+    }//GEN-LAST:event_jBVisuActionPerformed
 
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
+        ArrayList<String> lista_jog = new ArrayList<String>(); //Lista dos dados do jogador
+        ControleBanco banco = new ControleBanco(); //Classe de controle do banco
+        
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/footleague", "root","mugen");
-            String query = "select * from jogador where nome = ?";
-            PreparedStatement stmt1 = con.prepareStatement(query);
-            
-            stmt1.setString(1,jTextField1.getText());
-            
-            ResultSet rs1;
-            rs1 = stmt1.executeQuery();
-                              
-            while (rs1.next()) {
-                jLabel2.setText(rs1.getString(3));
-                jLabel4.setText(rs1.getString(4));
-                jLabel6.setText(rs1.getString(8));
-                nome_imagem=rs1.getString(10);
-            }
-            
-            jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Foot Project\\Im_Jogadores\\"+nome_imagem+".jpg")); 
-                  
-        }catch (ClassNotFoundException ex) {
-            System.out.println("Classe não encontrada" +ex.getMessage());
-            
-        }catch(SQLException ex) {
-            System.out.println("Erro de SQL" +ex.getMessage());
-            
+            banco.conectarBanco();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
         }
+        try {
+            lista_jog = banco.buscarJogador("Neymar");
+            System.out.println(lista_jog);
+        } catch (Exception ex) {
+            Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);            
+        }        
+        try {
+            banco.desconectarBanco();
+          } catch (Exception ex) {
+            Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+              
     }//GEN-LAST:event_jBBuscarActionPerformed
 
     private void jBClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClearActionPerformed
@@ -288,7 +269,10 @@ public class JFPesquisa extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(JFPesquisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        //String[] lista;
+        //lista = new String[] {a, b, c};
+        //jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(lista));
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -299,8 +283,8 @@ public class JFPesquisa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBBuscar;
     private javax.swing.JButton jBClear;
-    private javax.swing.JButton jBVisualizar;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton jBVisu;
+    public javax.swing.JComboBox jComboBox1;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -308,6 +292,7 @@ public class JFPesquisa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
