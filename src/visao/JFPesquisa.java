@@ -21,6 +21,8 @@ public class JFPesquisa extends javax.swing.JFrame {
 
 
    private String nome_imagem;
+     ArrayList<String> lista_jog = new ArrayList<String>(); //Lista dos dados do jogador
+      ControleBanco banco = new ControleBanco(); //Classe de controle do banco
     /**
      * Creates new form JFPesquisa
      */
@@ -208,7 +210,7 @@ public class JFPesquisa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 //Próxima funcionalidade a se desenvolvida
-    private void jBVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisualizarActionPerformed
+  /*  private void jBVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisualizarActionPerformed
         new JFVisualiza2().setVisible(true);
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -230,16 +232,20 @@ public class JFPesquisa extends javax.swing.JFrame {
         }catch(SQLException e) {
             System.out.println("Erro de SQL: "+e.getMessage());
         }
-    }//GEN-LAST:event_jBVisualizarActionPerformed
+    }//GEN-LAST:event_jBVisualizarActionPerformed*/
 
-    private void jBVisuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisuActionPerformed
-        new JFVisualiza().setVisible(true);
+    private void jBVisuActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException, Exception {//GEN-FIRST:event_jBVisuActionPerformed
+        new JFVisualiza2().setVisible(true);
+        banco.conectarBanco();
+        lista_jog = banco.buscarJogador(jTextField1.getText());
+        System.out.println(lista_jog);
+        //JFVisualiza.jLabel1.setText(lista_jog.get(1));
     }//GEN-LAST:event_jBVisuActionPerformed
 
 
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
-        ArrayList<String> lista_jog = new ArrayList<String>(); //Lista dos dados do jogador
-        ControleBanco banco = new ControleBanco(); //Classe de controle do banco
+      
+   
         
         try {
             banco.conectarBanco();
