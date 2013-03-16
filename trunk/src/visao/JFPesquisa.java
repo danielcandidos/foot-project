@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 import negocio.ControleBanco;
 
 
@@ -23,6 +24,7 @@ public class JFPesquisa extends javax.swing.JFrame {
    private String nome_imagem;
      ArrayList<String> lista_jog = new ArrayList<String>(); //Lista dos dados do jogador
       ControleBanco banco = new ControleBanco(); //Classe de controle do banco
+     JFVisualiza2 a = new JFVisualiza2();
     /**
      * Creates new form JFPesquisa
      */
@@ -127,7 +129,13 @@ public class JFPesquisa extends javax.swing.JFrame {
         jBVisu.setText("Visualizar");
         jBVisu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBVisuActionPerformed(evt);
+                try {
+                    jBVisuActionPerformed(evt);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -234,19 +242,11 @@ public class JFPesquisa extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jBVisualizarActionPerformed*/
 
-    private void jBVisuActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException, Exception {//GEN-FIRST:event_jBVisuActionPerformed
-        new JFVisualiza2().setVisible(true);
-        banco.conectarBanco();
-        lista_jog = banco.buscarJogador(jTextField1.getText());
-        System.out.println(lista_jog);
-        //JFVisualiza.jLabel1.setText(lista_jog.get(1));
-    }//GEN-LAST:event_jBVisuActionPerformed
+   //GEN-LAST:event_jBVisuActionPerformed
 
 
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
-      
-   
-        
+
         try {
             banco.conectarBanco();
         } catch (ClassNotFoundException ex) {
@@ -259,17 +259,27 @@ public class JFPesquisa extends javax.swing.JFrame {
             jLabel2.setText(lista_jog.get(1));//nome
             jLabel4.setText(lista_jog.get(2));//data de nascimento 
             jLabel6.setText(lista_jog.get(6));//clube atual
+            a.jLabel12.setText("TESTE");
+            
             
         } catch (Exception ex) {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);            
         }        
-        try {
-            banco.desconectarBanco();
-          } catch (Exception ex) {
-            Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       //try {
+           // banco.desconectarBanco();
+        //  } catch (Exception ex) {
+            //Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+       // }
               
     }//GEN-LAST:event_jBBuscarActionPerformed
+    
+     private void jBVisuActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException, Exception {//GEN-FIRST:event_jBVisuActionPerformed
+       a.setVisible(true);
+        lista_jog = banco.busca_total(jTextField1.getText());
+        a.jLabel12.setText("wewwe");
+        
+        
+    }
 
     private void jBClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClearActionPerformed
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Foot Project\\Im_Jogadores\\Padrao.jpg"));
