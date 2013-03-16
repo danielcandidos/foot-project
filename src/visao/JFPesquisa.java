@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package visao;
 
 import java.awt.event.ActionEvent;
@@ -15,12 +11,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.ControleBanco;
 
+
+
 /**
  *
- * @author Daniel
+ * @author clodoalves
  */
 public class JFPesquisa extends javax.swing.JFrame {
-    private String nome_imagem;
+
+
+   private String nome_imagem;
     /**
      * Creates new form JFPesquisa
      */
@@ -36,7 +36,7 @@ public class JFPesquisa extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
@@ -51,7 +51,7 @@ public class JFPesquisa extends javax.swing.JFrame {
         jBBuscar = new javax.swing.JButton();
         jBClear = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextField1.setText("Buscar jogador");
@@ -101,7 +101,7 @@ public class JFPesquisa extends javax.swing.JFrame {
                         .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
+         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -148,8 +148,8 @@ public class JFPesquisa extends javax.swing.JFrame {
                 jBClearActionPerformed(evt);
             }
         });
-
-        jLabel8.setText("=>");
+        
+         jLabel8.setText("=>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,7 +207,7 @@ public class JFPesquisa extends javax.swing.JFrame {
         setBounds((screenSize.width-469)/2, (screenSize.height-390)/2, 469, 390);
     }// </editor-fold>//GEN-END:initComponents
 
-
+//Próxima funcionalidade a se desenvolvida
     private void jBVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisualizarActionPerformed
         new JFVisualiza2().setVisible(true);
         try {
@@ -247,8 +247,12 @@ public class JFPesquisa extends javax.swing.JFrame {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            lista_jog = banco.buscarJogador("Neymar");
+            lista_jog = banco.buscarJogador(jTextField1.getText());//É AQUI!
             System.out.println(lista_jog);
+            jLabel2.setText(lista_jog.get(1));//
+            jLabel4.setText(lista_jog.get(2));//
+            jLabel6.setText(lista_jog.get(6));//
+            
         } catch (Exception ex) {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);            
         }        
@@ -323,3 +327,34 @@ public class JFPesquisa extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
+
+
+
+  
+  /*  @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+        pack();
+    }
+    // </editor-fold>//GEN-END:initComponents
+
+    /**
+
+     */
+   
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
+//}
