@@ -207,9 +207,35 @@ public class JFPesquisa extends javax.swing.JFrame {
         setBounds((screenSize.width-469)/2, (screenSize.height-390)/2, 469, 390);
     }// </editor-fold>//GEN-END:initComponents
 
+
+    private void jBVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisualizarActionPerformed
+        new JFVisualiza2().setVisible(true);
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/footleague","root","mugen");
+            String query = "insert into jogador (nome_c, data_n, altura, peso, ultimo_clube, clube_atual )";
+            PreparedStatement stmt = con.prepareStatement(query);
+            
+            stmt.setString(1,jTextField1.getText());
+            
+            ResultSet rs1;
+            
+            rs1 = stmt.executeQuery();
+            
+            while (rs1.next()){
+                //JFVisualiza2.jLabel15 = rs1.getString(1);
+            }
+        }catch (ClassNotFoundException e) {
+            System.out.println("Classe não encontrada: "+ e.getMessage());
+        }catch(SQLException e) {
+            System.out.println("Erro de SQL: "+e.getMessage());
+        }
+    }//GEN-LAST:event_jBVisualizarActionPerformed
+
     private void jBVisuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisuActionPerformed
         new JFVisualiza().setVisible(true);
     }//GEN-LAST:event_jBVisuActionPerformed
+
 
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
         ArrayList<String> lista_jog = new ArrayList<String>(); //Lista dos dados do jogador
