@@ -247,11 +247,12 @@ public class JFPesquisa extends javax.swing.JFrame {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
+            //Retorno de cada atributo da tabela jogador
             lista_jog = banco.buscarJogador(jTextField1.getText());//É AQUI!
             System.out.println(lista_jog);
-            jLabel2.setText(lista_jog.get(1));//
-            jLabel4.setText(lista_jog.get(2));//
-            jLabel6.setText(lista_jog.get(6));//
+            jLabel2.setText(lista_jog.get(1));//nome
+            jLabel4.setText(lista_jog.get(2));//data de nascimento 
+            jLabel6.setText(lista_jog.get(6));//clube atual
             
         } catch (Exception ex) {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);            
