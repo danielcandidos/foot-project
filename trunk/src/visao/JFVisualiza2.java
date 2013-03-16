@@ -412,7 +412,7 @@ public class JFVisualiza2 extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField1;
     public javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
-    public String jNome;
+
 
   
     }
