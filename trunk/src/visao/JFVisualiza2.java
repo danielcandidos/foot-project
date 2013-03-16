@@ -27,7 +27,7 @@ public class JFVisualiza2 extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -61,7 +61,6 @@ public class JFVisualiza2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
 
         jLabel10.setText("jLabel10");
 
@@ -179,12 +178,6 @@ public class JFVisualiza2 extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel21.setText("jLabel21");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -211,16 +204,12 @@ public class JFVisualiza2 extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(27, 27, 27)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel2)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -234,12 +223,17 @@ public class JFVisualiza2 extends javax.swing.JFrame {
                                                 .addGap(10, 10, 10)
                                                 .addComponent(jLabel21)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel14))))
+                                                .addComponent(jLabel14))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(25, 25, 25)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel15)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(86, 86, 86)
@@ -252,13 +246,8 @@ public class JFVisualiza2 extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel16))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(137, 137, 137)
-                                        .addComponent(jTextField1)))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel16)))))
                 .addContainerGap())
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
@@ -301,9 +290,7 @@ public class JFVisualiza2 extends javax.swing.JFrame {
                             .addComponent(jLabel20)
                             .addComponent(jLabel5)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
+                        .addGap(97, 97, 97)
                         .addComponent(jLabel7)))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -338,10 +325,6 @@ public class JFVisualiza2 extends javax.swing.JFrame {
     public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    public void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,39 +361,38 @@ public class JFVisualiza2 extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JComboBox jComboBox1;
-    public javax.swing.JComboBox jComboBox2;
-    public javax.swing.JComboBox jComboBox3;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel10;
-    public javax.swing.JLabel jLabel11;
-    public javax.swing.JLabel jLabel12;
-    public javax.swing.JLabel jLabel13;
-    public javax.swing.JLabel jLabel14;
-    public javax.swing.JLabel jLabel15;
-    public javax.swing.JLabel jLabel16;
-    public javax.swing.JLabel jLabel17;
-    public javax.swing.JLabel jLabel18;
-    public javax.swing.JLabel jLabel19;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel20;
-    public javax.swing.JLabel jLabel21;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
-    public javax.swing.JLabel jLabel6;
-    public javax.swing.JLabel jLabel7;
-    public javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLabel9;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTable jTable1;
-    public javax.swing.JTable jTable2;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 
 
