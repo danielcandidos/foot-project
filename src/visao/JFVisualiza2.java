@@ -385,7 +385,7 @@ public class JFVisualiza2 extends javax.swing.JFrame {
     public javax.swing.JComboBox jComboBox3;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
+    public javax.swing.JLabel jLabel11;
     public javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel13;
     public javax.swing.JLabel jLabel14;
@@ -409,7 +409,7 @@ public class JFVisualiza2 extends javax.swing.JFrame {
     public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable jTable1;
     public javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField1;
     public javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
     public String jNome;
