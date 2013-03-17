@@ -392,7 +392,7 @@ public class JFVisualiza2 extends javax.swing.JFrame {
     public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable jTable1;
     public javax.swing.JTable jTable2;
-    public.avax.swing.JToggleButton jToggleButton1;
+    public.javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 
 
