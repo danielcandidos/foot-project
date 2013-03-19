@@ -25,6 +25,7 @@ public class JFPesquisa extends javax.swing.JFrame {
      ArrayList<String> lista_jog = new ArrayList<String>(); //Lista dos dados do jogador
       ControleBanco banco = new ControleBanco(); //Classe de controle do banco
      JFVisualiza2 a = new JFVisualiza2();
+     static Connection con;
     /**
      * Creates new form JFPesquisa
      */
@@ -152,7 +153,7 @@ public class JFPesquisa extends javax.swing.JFrame {
         });
 
         jBClear.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jBClear.setText("Limpar");
+        jBClear.setText("Consultar");
         jBClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBClearActionPerformed(evt);
@@ -250,11 +251,10 @@ public class JFPesquisa extends javax.swing.JFrame {
         try {
             banco.conectarBanco();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
-        }
+              System.out.println("Erro de SQL"+ ex.getMessage());        }
         try {
             //Retorno de cada atributo da tabela jogador
-            lista_jog = banco.buscarJogador(jTextField1.getText());//É AQUI!
+            lista_jog = banco.buscarJogador(jComboBox1.getSelectedItem().toString());//É AQUI!
             System.out.println(lista_jog);
             jLabel2.setText(lista_jog.get(1));//nome
             jLabel4.setText(lista_jog.get(2));//data de nascimento 
@@ -287,11 +287,35 @@ public class JFPesquisa extends javax.swing.JFrame {
     }
 
     private void jBClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClearActionPerformed
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Foot Project\\Im_Jogadores\\Padrao.jpg"));
-        jLabel2.setText("Nome completo");
-        jLabel4.setText("");
-        jLabel6.setText("");
-        jTextField1.setText("Buscar Jogador");
+       try {
+            banco.conectarBanco();
+        } catch (ClassNotFoundException ex) {
+              System.out.println("Erro de SQL: "+ ex.getMessage());        }
+        try {
+            //Retorno de cada atributo da tabela jogador
+            jComboBox1.removeAllItems();
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/footleague","root","mugen");
+            String query = "select nome from jogador where nome like ?";
+            PreparedStatement stmt = con.prepareStatement(query);
+            
+            stmt.setString(1, "%"+jTextField1.getText()+ "%");
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                jComboBox1.addItem(rs.getString(1));
+            }
+            
+            jComboBox1.updateUI();
+            
+        } catch (Exception ex) {
+            System.out.println("Erro de SQL: "+ex.getMessage());;            
+        }        
+       //try {
+           // banco.desconectarBanco();
+        //  } catch (Exception ex) {
+            //Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+       // }
         
     }//GEN-LAST:event_jBClearActionPerformed
 
@@ -354,24 +378,24 @@ public class JFPesquisa extends javax.swing.JFrame {
 
   
   /*  @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 296, Short.MAX_VALUE)
         );
+
         pack();
-    }
-    // </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>//GEN-END:initComponents
 
     /**
 
