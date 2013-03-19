@@ -4,6 +4,8 @@
  */
 package visao;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import negocio.ControleBanco;
@@ -326,6 +328,12 @@ public class JFVisualiza2 extends javax.swing.JFrame {
 
     public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (jComboBox1.getSelectedItem().equals("2009")){
+            try {
+                banco.conectarBanco();
+                
+            } catch (ClassNotFoundException ex) {
+                System.out.println("");;
+            }
             
         }
     }//GEN-LAST:event_jButton1ActionPerformed
