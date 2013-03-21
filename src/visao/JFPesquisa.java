@@ -357,20 +357,20 @@ public class JFPesquisa extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jBBuscar;
-    private javax.swing.JButton jBClear;
-    private javax.swing.JButton jBVisu;
+    public javax.swing.JButton jBBuscar;
+    public javax.swing.JButton jBClear;
+    public javax.swing.JButton jBVisu;
     public javax.swing.JComboBox jComboBox1;
     public javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel8;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JTextField jTextField1;
     // End of variables declaration                   
 }
 
