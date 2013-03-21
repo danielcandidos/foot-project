@@ -22,7 +22,7 @@ public class JFPesquisa extends javax.swing.JFrame {
 
 
    private String nome_imagem;
-     ArrayList<String> lista_jog = new ArrayList<String>(); //Lista dos dados do jogador
+     ArrayList<String> lista_jog = new ArrayList<>(); //Lista dos dados do jogador
       ControleBanco banco = new ControleBanco(); //Classe de controle do banco
      JFVisualiza2 a = new JFVisualiza2();
      static Connection con;
@@ -256,10 +256,10 @@ public class JFPesquisa extends javax.swing.JFrame {
             //Retorno de cada atributo da tabela jogador
             lista_jog = banco.buscarJogador(jComboBox1.getSelectedItem().toString());//É AQUI!
             System.out.println(lista_jog);
-            jLabel2.setText(lista_jog.get(1));//nome
-            jLabel4.setText(lista_jog.get(2));//data de nascimento 
-            jLabel6.setText(lista_jog.get(6));//clube atual
-            
+                jLabel2.setText(lista_jog.get(1));//nome
+                jLabel4.setText(lista_jog.get(2));//data de nascimento 
+                jLabel6.setText(lista_jog.get(6));//clube atual
+             
             
         } catch (Exception ex) {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);            
@@ -351,6 +351,7 @@ public class JFPesquisa extends javax.swing.JFrame {
         //jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(lista));
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new JFPesquisa().setVisible(true);
             }
