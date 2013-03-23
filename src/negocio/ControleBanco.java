@@ -20,8 +20,9 @@ import java.util.ArrayList;
 public class  ControleBanco{    
     static Connection con;
     String query;
-    ArrayList<String> lista_jog = new ArrayList<String>();
-    ArrayList<String> lista_dados_jogs = new ArrayList<String>();
+    ArrayList lista_jog = new ArrayList();
+    ArrayList lista_dados_jogs = new ArrayList();
+    ArrayList lista_stats_jogs = new ArrayList();
     
     //lista_jog.add("Neymar");
     
@@ -75,7 +76,7 @@ public class  ControleBanco{
        
     }
     
-    public ArrayList<String> buscaNomes() throws Exception {
+    public ArrayList buscaListaJog() throws Exception {
         this.conectarBanco();
         this.query = "select nome from jogador";
         PreparedStatement stmt1 = con.prepareStatement(query);
@@ -108,7 +109,7 @@ public class  ControleBanco{
            datas.add(retorno.getString(4));
         }
         
-        desconectaDB();
+        this.desconectarBanco();
         
         String[][] Matrix = new String[3][datas.size()];
         int tamanho = datas.size();
@@ -141,7 +142,7 @@ public class  ControleBanco{
            datas.add(retorno.getString(4));
         }
         
-        desconectaDB();
+        this.desconectarBanco();
         
         String[][] Matrix = new String[3][datas.size()];
         int tamanho = datas.size();
@@ -151,6 +152,44 @@ public class  ControleBanco{
             Matrix[2][i] = valores.get(i)+"";
         }
         return Matrix;
+    }
+   
+    public ArrayList busca_temporada (String nome, String temporada) throws Exception {
+        this.conectarBanco();
+        String b = nome;
+        String a = temporada;
+        this.query = "select * from brasileirao_"+a+" where Nome = '"+b+"'";
+        PreparedStatement stmt = con.prepareStatement(query);            
+        ResultSet rs1 = stmt.executeQuery();
+
+        while (rs1.next()) {
+            lista_stats_jogs.add(rs1.getString(1));
+            lista_stats_jogs.add(rs1.getString(2));
+            lista_stats_jogs.add(rs1.getString(3));
+            lista_stats_jogs.add(rs1.getString(4));
+            lista_stats_jogs.add(rs1.getString(5));
+            lista_stats_jogs.add(rs1.getString(6));
+            lista_stats_jogs.add(rs1.getString(7));
+            lista_stats_jogs.add(rs1.getString(8));
+        }
+        this.desconectarBanco();
+        
+        System.out.println(lista_stats_jogs);
+        return lista_stats_jogs;
+    }
+    
+    public ArrayList buscaParcial (String nome) throws SQLException, Exception{
+        this.conectarBanco();
+        this.query = "select nome from jogador where nome like ?";
+        PreparedStatement stmt = con.prepareStatement(query);            
+        stmt.setString(1, "%"+nome+ "%");            
+        ResultSet rs = stmt.executeQuery();        
+        while (rs.next()){
+            lista_jog.add(rs.getString(1));
+        }
+        this.desconectarBanco();
+        
+        return lista_jog;
     }
 }
 
