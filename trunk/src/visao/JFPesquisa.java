@@ -55,6 +55,7 @@ public class JFPesquisa extends javax.swing.JFrame {
         jBBuscar = new javax.swing.JButton();
         jBVisu = new javax.swing.JButton();
         jBClear = new javax.swing.JButton();
+        jLMensagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,8 +75,8 @@ public class JFPesquisa extends javax.swing.JFrame {
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Foto");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Foot Project\\Im_Jogadores\\padrao.jpg")); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 31, 99, 99));
 
@@ -121,6 +122,10 @@ public class JFPesquisa extends javax.swing.JFrame {
             }
         });
 
+        jLMensagem.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        jLMensagem.setForeground(new java.awt.Color(204, 0, 0));
+        jLMensagem.setText("       ");
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,20 +136,23 @@ public class JFPesquisa extends javax.swing.JFrame {
                         .add(166, 166, 166)
                         .add(jBVisu))
                     .add(layout.createSequentialGroup()
-                        .add(43, 43, 43)
-                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jBPassar)
-                        .add(18, 18, 18)
-                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
                         .add(113, 113, 113)
                         .add(jBBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(30, 30, 30)
                         .add(jBClear, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(layout.createSequentialGroup()
                         .add(22, 22, 22)
-                        .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 393, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 393, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(layout.createSequentialGroup()
+                        .add(43, 43, 43)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLMensagem)
+                            .add(layout.createSequentialGroup()
+                                .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(jBPassar)
+                                .add(18, 18, 18)
+                                .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -155,7 +163,9 @@ public class JFPesquisa extends javax.swing.JFrame {
                     .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jBPassar))
-                .add(18, 18, 18)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLMensagem)
+                .add(22, 22, 22)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jBBuscar)
                     .add(jBClear))
@@ -163,13 +173,16 @@ public class JFPesquisa extends javax.swing.JFrame {
                 .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
                 .add(jBVisu)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-466)/2, (screenSize.height-378)/2, 466, 378);
+        setBounds((screenSize.width-466)/2, (screenSize.height-398)/2, 466, 398);
     }// </editor-fold>//GEN-END:initComponents
-
+    public void inicializar (){
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Foot Project\\Im_Jogadores\\Padrao.jpg")); 
+    }
+    
     private void jBVisuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisuActionPerformed
         try {
             JFVisualiza a = new JFVisualiza();
@@ -195,23 +208,28 @@ public class JFPesquisa extends javax.swing.JFrame {
             lista_jog = banco.buscarJogador(jComboBox1.getSelectedItem().toString());//É AQUI!
             System.out.println(lista_jog);
             jLabel2.setText(lista_jog.get(1));//nome
-            jLabel4.setText(lista_jog.get(2));//data de nascimento 
+            jLabel5.setText(lista_jog.get(2));//data de nascimento 
             jLabel6.setText(lista_jog.get(6));//clube atual
-            
+            nome_imagem = lista_jog.get(8);
+            jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Foot Project\\Im_Jogadores\\"+nome_imagem+".jpg"));
             
         } catch (Exception ex) {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);            
         }        
-       //try {
-           // banco.desconectarBanco();
-        //  } catch (Exception ex) {
-            //Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
-       // }
-              
-              
     }//GEN-LAST:event_jBBuscarActionPerformed
 
     private void jBClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClearActionPerformed
+        ControleBanco banco = new ControleBanco();
+        try {
+            lista_jog = banco.buscaListaJog();
+        } catch (Exception ex) {
+            Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jComboBox1.removeAllItems();
+        for (int i = 0; i<lista_jog.size(); i++) {
+            jComboBox1.addItem(lista_jog.get(i));
+        }
+        jComboBox1.updateUI();
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Foot Project\\Im_Jogadores\\Padrao.jpg"));
         jLabel2.setText("Nome do Jogador Completo");
         jLabel5.setText("");
@@ -221,13 +239,21 @@ public class JFPesquisa extends javax.swing.JFrame {
     }//GEN-LAST:event_jBClearActionPerformed
 
     private void jBPassarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPassarActionPerformed
-        try {
+        try {            
             ControleBanco banco = new ControleBanco();
-            lista_jog=banco.buscaNomes();
-            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cristiano Ronaldo", "Lionel Messi", "Neymar", "Balotelli", "Oscar", " " }));
+            lista_jog=banco.buscaParcial(jTextField1.getText());
+            if (lista_jog.size() > 0){
+                jComboBox1.removeAllItems();
+                for (int i = 0; i<lista_jog.size(); i++) {
+                    jComboBox1.addItem(lista_jog.get(i));
+                }
+                jComboBox1.updateUI();
+            } else {
+                jLMensagem.setText("Jogador não encontrado");
+            }              
         } catch (Exception ex) {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }        
     }//GEN-LAST:event_jBPassarActionPerformed
 
     /**
@@ -262,8 +288,8 @@ public class JFPesquisa extends javax.swing.JFrame {
         //jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(lista));
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFPesquisa().setVisible(true);
+            public void run() {                
+                new JFPesquisa().setVisible(true);                
             }
         });
     }
@@ -273,6 +299,7 @@ public class JFPesquisa extends javax.swing.JFrame {
     private javax.swing.JButton jBPassar;
     private javax.swing.JButton jBVisu;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLMensagem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
