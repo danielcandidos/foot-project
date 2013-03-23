@@ -9,5 +9,5 @@ package negocio;
  * @author Daniel
  */
 public class Comparacao {
-    
+
 }
