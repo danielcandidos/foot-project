@@ -5,6 +5,7 @@
 package negocio;
 
 import bean.Jogador;
+import bean.Stats;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,9 +21,9 @@ import java.util.ArrayList;
 public class  ControleBanco{    
     static Connection con;
     String query;
-    ArrayList lista_jog = new ArrayList();
-    ArrayList lista_dados_jogs = new ArrayList();
-    ArrayList lista_stats_jogs = new ArrayList();
+    ArrayList listadeJogadores = new ArrayList();
+    ArrayList listaDadosJog = new ArrayList();
+    ArrayList listaStatsJogs = new ArrayList();
     
     //lista_jog.add("Neymar");
     
@@ -52,28 +53,24 @@ public class  ControleBanco{
         exe.close();
     }
     
-    public ArrayList<String> buscarJogador(String nome) throws Exception{
-        String b = nome;
+    public Jogador buscarJogador(String nome) throws Exception{
+        Jogador jogador = new Jogador(nome);
         this.query = "select * from jogador where nome = ?";
         PreparedStatement stmt1 = con.prepareStatement(query);                
-        stmt1.setString(1,b);                
+        stmt1.setString(1,nome);                
         ResultSet rs1;
-        rs1 = stmt1.executeQuery(); 
-
-           while(rs1.next()) {
-            lista_dados_jogs.add(rs1.getString(2));                
-            lista_dados_jogs.add(rs1.getString(3));                
-            lista_dados_jogs.add(rs1.getString(4));                
-            lista_dados_jogs.add(rs1.getString(5));                
-            lista_dados_jogs.add(rs1.getString(6));                
-            lista_dados_jogs.add(rs1.getString(7));                
-            lista_dados_jogs.add(rs1.getString(8));                
-            lista_dados_jogs.add(rs1.getString(9));
-            lista_dados_jogs.add(rs1.getString(10));
-        }      
-        System.out.println(lista_dados_jogs);
-        return lista_dados_jogs;
-       
+        rs1 = stmt1.executeQuery();
+        while(rs1.next()) {
+            jogador.setNomeComp(rs1.getString(3));
+            jogador.setDataNasc(rs1.getString(4));
+            jogador.setAltura(rs1.getFloat(5));
+            jogador.setPeso(rs1.getFloat(6));
+            jogador.setClubeAnt(rs1.getString(7));
+            jogador.setClubeAtual(rs1.getString(8));
+            jogador.setNacionalidade(rs1.getString(9));
+            jogador.setImagem(rs1.getString(10));
+        }          
+        return jogador;       
     }
     
     public ArrayList buscaListaJog() throws Exception {
@@ -82,11 +79,10 @@ public class  ControleBanco{
         PreparedStatement stmt1 = con.prepareStatement(query);
         ResultSet rs1 = stmt1.executeQuery();
         while (rs1.next()){
-            lista_jog.add(rs1.getString(1));                 
+            listadeJogadores.add(rs1.getString(1));                 
         }
-        System.out.println(lista_jog);
         this.desconectarBanco();
-        return lista_jog;       
+        return listadeJogadores;       
     }
     
     public String[][] getStats1(Filtro filtro, Jogador jogador)throws Exception {
@@ -154,28 +150,22 @@ public class  ControleBanco{
         return Matrix;
     }
    
-    public ArrayList busca_temporada (String nome, String temporada) throws Exception {
+    public Stats buscaTemporada (String nome, int temporada) throws Exception {
+        Stats stats = new Stats(temporada);
         this.conectarBanco();
-        String b = nome;
-        String a = temporada;
-        this.query = "select * from brasileirao_"+a+" where Nome = '"+b+"'";
+        this.query = "select * from brasileirao_"+temporada+" where Nome = '"+nome+"'";
         PreparedStatement stmt = con.prepareStatement(query);            
         ResultSet rs1 = stmt.executeQuery();
-
         while (rs1.next()) {
-            lista_stats_jogs.add(rs1.getString(1));
-            lista_stats_jogs.add(rs1.getString(2));
-            lista_stats_jogs.add(rs1.getString(3));
-            lista_stats_jogs.add(rs1.getString(4));
-            lista_stats_jogs.add(rs1.getString(5));
-            lista_stats_jogs.add(rs1.getString(6));
-            lista_stats_jogs.add(rs1.getString(7));
-            lista_stats_jogs.add(rs1.getString(8));
+            stats.setClube(rs1.getString(3));
+            stats.setPartidas(rs1.getInt(4));
+            stats.setGols(rs1.getInt(5));
+            stats.setAssist(rs1.getInt(6));
+            stats.setCarAma(rs1.getInt(7));
+            stats.setCarVer(rs1.getInt(8));
         }
-        this.desconectarBanco();
-        
-        System.out.println(lista_stats_jogs);
-        return lista_stats_jogs;
+        this.desconectarBanco();        
+        return stats;
     }
     
     public ArrayList buscaParcial (String nome) throws SQLException, Exception{
@@ -185,11 +175,10 @@ public class  ControleBanco{
         stmt.setString(1, "%"+nome+ "%");            
         ResultSet rs = stmt.executeQuery();        
         while (rs.next()){
-            lista_jog.add(rs.getString(1));
+            listadeJogadores.add(rs.getString(1));
         }
-        this.desconectarBanco();
-        
-        return lista_jog;
+        this.desconectarBanco();        
+        return listadeJogadores;
     }
 }
 
