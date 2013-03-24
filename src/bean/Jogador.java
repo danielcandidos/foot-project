@@ -11,12 +11,14 @@ import java.util.Date;
  * @author Daniel
  */
 public class Jogador {
-    private String nome, nomeComp, pePref, clubeAtual, clubeAnt, imagem, nacionalidade;
-
-
-    private String dataNasc;
+    private String nome, nomeComp, pePref, clubeAtual, clubeAnt,
+            imagem, nacionalidade, dataNasc, posicao;
     private float altura, peso;
     private String[] estatisticas, premios;
+    
+    public Jogador(String nome){
+        this.nome = nome;
+    }
     
     public String getNacionalidade() {
         return nacionalidade;
@@ -57,7 +59,11 @@ public class Jogador {
     public float getPeso() {
         return peso;
     }
-
+    
+    public String getPosicao(){
+        return posicao;
+    }
+    
     public String[] getEstatisticas() {
         return estatisticas;
     }
@@ -65,7 +71,7 @@ public class Jogador {
     public String[] getPremios() {
         return premios;
     }
-
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -105,6 +111,10 @@ public class Jogador {
     public void setEstatisticas(String[] estatisticas) {
         this.estatisticas = estatisticas;
     }
+    
+    public void setPosicao(String posicao){
+        this.posicao = posicao;
+    }
 
     public void setPremios(String[] premios) {
         this.premios = premios;
@@ -113,6 +123,5 @@ public class Jogador {
     public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
     }
-
     
 }
