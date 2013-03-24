@@ -4,12 +4,14 @@
  */
 package visao;
 
+import bean.Jogador;
+
 /**
  *
  * @author Daniel
  */
 public class JFVisualiza extends javax.swing.JFrame {
-
+    Jogador jogador;
     /**
      * Creates new form JFVisualiza
      */
@@ -61,7 +63,6 @@ public class JFVisualiza extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(440, 455));
 
         jLFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLFoto.setText("foto");
         jLFoto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
