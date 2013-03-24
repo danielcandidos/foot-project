@@ -10,6 +10,9 @@ package bean;
  */
 public class JogLinha extends Jogador {
     private String[] statsGerais;
-    private String posicao;
+    
+    public JogLinha(String nome){
+        super(nome);
+    }
     
 }
