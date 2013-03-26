@@ -11,11 +11,11 @@ import java.util.ArrayList;
  * @author Daniel
  */
 public class Stats {
-    private String campeonato;
+    private String campeonato= "Brasileirão";
     private int ano, partidas, gols, finalizacoes, assistencias, carAma, carVer;
     private double mediaGols, mediaAssist;
     private String clube;
-    private ArrayList listaGeral;
+    public ArrayList listaGeral;
     
     public Stats(int ano){
         this.ano = ano;
@@ -123,12 +123,6 @@ public class Stats {
         return mediaGols;
     }
     /**
-     * @param mediaGols the mediaGols to set
-     */
-    public void gerarMediaGols() {
-        this.mediaGols = (this.gols/this.partidas);
-    }
-    /**
      * @return the mediaAssist
      */
     public double getMediaAssist() {
@@ -137,8 +131,9 @@ public class Stats {
     /**
      * @param mediaAssist the mediaAssist to set
      */
-    public void gerarMediaAssist() {
-        this.mediaAssist = (this.assistencias/this.partidas);
+    public void gerarMedias() {
+        this.mediaGols = (Double.parseDouble(this.gols+"")/Double.parseDouble(this.partidas+""));
+        this.mediaAssist = (Double.parseDouble(this.assistencias+"")/Double.parseDouble(this.partidas+""));
     }
     /**
      * @return the clube
@@ -153,14 +148,17 @@ public class Stats {
         this.clube = clube;
     }
     public ArrayList getStats (){
-        listaGeral.add(campeonato);
-        listaGeral.add(clube);
-        listaGeral.add(gols+"");
-        listaGeral.add(mediaGols+"");
-        listaGeral.add(assistencias+"");
-        listaGeral.add(mediaAssist+"");
-        listaGeral.add(carAma+"");
-        listaGeral.add(carVer+"");
-        return listaGeral;
+        ArrayList novaLista = new ArrayList();
+        novaLista.add(this.ano);
+        novaLista.add(this.clube);
+        novaLista.add(this.partidas);
+        novaLista.add(this.gols);
+        novaLista.add(this.mediaGols);
+        novaLista.add(this.assistencias);
+        novaLista.add(this.mediaAssist);
+        novaLista.add(this.carAma);
+        novaLista.add(this.carVer);
+        System.out.println(novaLista);
+        return novaLista;
     }
 }
