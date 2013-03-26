@@ -4,6 +4,7 @@
  */
 package bean;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,7 +15,8 @@ public class Jogador {
     private String nome, nomeComp, pePref, clubeAtual, clubeAnt,
             imagem, nacionalidade, dataNasc, posicao;
     private float altura, peso;
-    private String[] estatisticas, premios;
+    public ArrayList<Stats> estatisticas = new ArrayList();
+    private ArrayList premios;
     
     public Jogador(String nome){
         this.nome = nome;
@@ -64,11 +66,12 @@ public class Jogador {
         return posicao;
     }
     
-    public String[] getEstatisticas() {
+    public ArrayList getEstatisticas() {
+        System.out.println(estatisticas);
         return estatisticas;
     }
 
-    public String[] getPremios() {
+    public ArrayList getPremios() {
         return premios;
     }
     
@@ -108,15 +111,15 @@ public class Jogador {
         this.peso = peso;
     }
 
-    public void setEstatisticas(String[] estatisticas) {
-        this.estatisticas = estatisticas;
+    public void addEstatisticas(Stats stats) {
+        this.estatisticas.add(stats);
     }
     
     public void setPosicao(String posicao){
         this.posicao = posicao;
     }
 
-    public void setPremios(String[] premios) {
+    public void addPremios(ArrayList premios) {
         this.premios = premios;
     }
     

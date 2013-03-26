@@ -7,6 +7,7 @@ package bean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import negocio.ControleBanco;
+import negocio.Filtro;
 import visao.JFPesquisa;
 
 /**
@@ -20,7 +21,9 @@ public class Teste {
         //String b = "";
         try{
             ControleBanco banco = new ControleBanco();
-            banco.busca_temporada("Neymar", "2012");
+            //filtro.setTemporada1(2011);
+            //filtro.setTemporada2(2013);
+            //banco.buscaTemporada("Neymar", 2012);
         } catch (Exception ex) {
             Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -28,6 +31,6 @@ public class Teste {
         //    b+=a;
         //}
         //System.out.println(b);
-        Goleiro goleiro = new Goleiro(nome);
+        //Goleiro goleiro = new Goleiro(nome);
     }
 }
