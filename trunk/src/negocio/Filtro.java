@@ -9,21 +9,38 @@ package negocio;
  * @author Daniel
  */
 public class Filtro {
-    private String temporada = "todos";
+    private int temp1;
+    private int temp2;
     private String clube = "todos";
     private String campeonato = "brasileirao";    
-
+    
+    public Filtro(int t1, int t2){
+        this.temp1 = t1;
+        this.temp2 = t2;
+    }
     /**
      * @return the temporada
      */
-    public String getTemporada() {
-        return temporada;
+    public int getTemporada1() {
+        return temp1;
     }
     /**
      * @param temporada the temporada to set
      */
-    public void setTemporada(String temporada) {
-        this.temporada = temporada;
+    public void setTemporada1(int temporada) {
+        this.temp1 = temporada;
+    }
+    /**
+     * @return the temporada
+     */
+    public int getTemporada2() {
+        return temp2;
+    }
+    /**
+     * @param temporada the temporada to set
+     */
+    public void setTemporada2(int temporada) {
+        this.temp2 = temporada;
     }
     /**
      * @return the clube
