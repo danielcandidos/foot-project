@@ -6,6 +6,7 @@ package negocio;
 
 import bean.Jogador;
 import bean.Stats;
+import bean.StatsGol;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -69,6 +70,7 @@ public class  ControleBanco{
             jogador.setClubeAtual(rs1.getString(8));
             jogador.setNacionalidade(rs1.getString(9));
             jogador.setImagem(rs1.getString(10));
+            jogador.setPosicao(rs1.getString(11));
         }          
         return jogador;       
     }
@@ -88,10 +90,10 @@ public class  ControleBanco{
     public String[][] getStats1(Filtro filtro, Jogador jogador)throws Exception {
         this.conectarBanco();
         String campeonato=filtro.getCampeonato();
-        String ano = filtro.getTemporada();
+        //String ano = filtro.getTemporada();
         String clube = filtro.getClube();
         String jog = jogador.getNome();
-        this.query = "select * from "+campeonato+"_"+ano+" where Nome = "+jogador+" and Clube = "+clube+" " ;
+        //this.query = "select * from "+campeonato+"_"+ano+" where Nome = "+jogador+" and Clube = "+clube+" " ;
         PreparedStatement exe = con.prepareStatement(query);
         ResultSet retorno = exe.executeQuery();
      
@@ -120,7 +122,7 @@ public class  ControleBanco{
    public String[][] getStats2(Filtro filtro, Jogador jogador, String paramentro)throws Exception {
         this.conectarBanco();
         String campeonato=filtro.getCampeonato();
-        String ano = filtro.getTemporada();
+        //tring ano = filtro.getTemporada();
         String clube = filtro.getClube();
         String jog = jogador.getNome();
         //this.query = "select * from "+campeonato+"_"+ano+" where "+paramentro+" = "+jogador+" " ;
@@ -179,6 +181,50 @@ public class  ControleBanco{
         }
         this.desconectarBanco();        
         return listadeJogadores;
+    }
+    
+    public Jogador teste(Filtro filtro, Jogador jogador) throws SQLException, Exception{
+        this.conectarBanco();
+        for (int temp = filtro.getTemporada1(); temp<=filtro.getTemporada2(); temp++) {
+            this.query = "select * from brasileirao_"+temp+" where Nome = '"+jogador.getNome()+"'";             
+            PreparedStatement stmt = con.prepareStatement(query);            
+            ResultSet rs1 = stmt.executeQuery();
+            
+            if (jogador.getPosicao().equals("Goleiro")){
+                StatsGol statsGol = new StatsGol(temp);
+                while (rs1.next()) {
+                    statsGol.setClube(rs1.getString(3));
+                    statsGol.setPartidas(rs1.getInt(4));
+                    statsGol.setGols(rs1.getInt(5));
+                    statsGol.setAssist(rs1.getInt(6));
+                    statsGol.setCarAma(rs1.getInt(7));
+                    statsGol.setCarVer(rs1.getInt(8));
+                    statsGol.setGolsSofr(rs1.getInt(9));
+                    statsGol.setDefesasDif(rs1.getInt(10));
+                }
+                statsGol.gerarMedias();
+                System.out.println(statsGol.getStats());
+                jogador.addEstatisticas(statsGol);
+                jogador.getEstatisticas();
+            } else {
+                Stats stats = new Stats(temp);
+                while (rs1.next()) {
+                    stats.setClube(rs1.getString(3));
+                    stats.setPartidas(rs1.getInt(4));
+                    stats.setGols(rs1.getInt(5));
+                    stats.setAssist(rs1.getInt(6));
+                    stats.setCarAma(rs1.getInt(7));
+                    stats.setCarVer(rs1.getInt(8));
+                }
+                stats.gerarMedias();
+                System.out.println(stats.getStats());
+                jogador.addEstatisticas(stats);
+                jogador.getEstatisticas();
+            }            
+            
+        }
+        this.desconectarBanco();
+        return jogador;
     }
 }
 
