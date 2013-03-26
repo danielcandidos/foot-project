@@ -14,6 +14,7 @@ public class FutBuscPlayers {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        NewJFrame newJFrame = new NewJFrame();
+        newJFrame.setVisible(true);
     }
 }
