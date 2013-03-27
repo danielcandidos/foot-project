@@ -115,6 +115,10 @@ public class Jogador {
         this.estatisticas.add(stats);
     }
     
+    public void zerarEstatisticas(){
+        this.estatisticas = new ArrayList<Stats>();
+    }
+    
     public void setPosicao(String posicao){
         this.posicao = posicao;
     }
