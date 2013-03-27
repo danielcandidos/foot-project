@@ -49,7 +49,7 @@
 || *Ator* || Usuário. ||
 || *Prioridade* || Alta. ||
 || *Pré-condição* || O jogador ser selecionado.  ||
-|| *Pós-condições* || Gerar relatório, comparar jogador ou filtrar estatísticas. ||
+|| *Pós-condições* || Comparar jogador ou filtrar por período. ||
 
 ==Cenários principais de sucesso==
 
