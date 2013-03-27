@@ -4,6 +4,7 @@
  */
 package negocio;
 
+import bean.Goleiro;
 import bean.Jogador;
 import bean.Stats;
 import bean.StatsGol;
@@ -17,7 +18,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 /**
  *
- * @author danielCandido, raffaelVieira, raphaelAlves
+ * @footProject
  */
 public class  ControleBanco{    
     static Connection con;
@@ -25,8 +26,8 @@ public class  ControleBanco{
     ArrayList listadeJogadores = new ArrayList();
     ArrayList listaDadosJog = new ArrayList();
     ArrayList listaStatsJogs = new ArrayList();
-    
-    //lista_jog.add("Neymar");
+    Jogador jogador;
+    ArrayList<Integer> arraylist;
     
     public void conectarBanco() throws ClassNotFoundException{ 
         String driver = "com.mysql.jdbc.Driver";
@@ -48,12 +49,9 @@ public class  ControleBanco{
         con.close();
     }
     
-    public void executarBanco(String query)throws Exception{
-        Statement exe = con.createStatement();
-        exe.executeUpdate(query);
-        exe.close();
-    }
-    
+    /*
+     * Retorna o Jogador buscado com todos seus dados
+     */
     public Jogador buscarJogador(String nome) throws Exception{
         Jogador jogador = new Jogador(nome);
         this.query = "select * from jogador where nome = ?";
@@ -75,6 +73,9 @@ public class  ControleBanco{
         return jogador;       
     }
     
+    /*
+     * Retorna uma lista com os nomes de todos os jogadores
+     */
     public ArrayList buscaListaJog() throws Exception {
         this.conectarBanco();
         this.query = "select nome from jogador";
@@ -85,91 +86,11 @@ public class  ControleBanco{
         }
         this.desconectarBanco();
         return listadeJogadores;       
-    }
+    }    
     
-    public String[][] getStats1(Filtro filtro, Jogador jogador)throws Exception {
-        this.conectarBanco();
-        String campeonato=filtro.getCampeonato();
-        //String ano = filtro.getTemporada();
-        String clube = filtro.getClube();
-        String jog = jogador.getNome();
-        //this.query = "select * from "+campeonato+"_"+ano+" where Nome = "+jogador+" and Clube = "+clube+" " ;
-        PreparedStatement exe = con.prepareStatement(query);
-        ResultSet retorno = exe.executeQuery();
-     
-        ArrayList valores = new ArrayList();
-        ArrayList datas = new ArrayList();
-        ArrayList pessoas = new ArrayList();
-
-        while (retorno.next()) {
-           pessoas.add(retorno.getString(2));
-           valores.add(retorno.getString(3));
-           datas.add(retorno.getString(4));
-        }
-        
-        this.desconectarBanco();
-        
-        String[][] Matrix = new String[3][datas.size()];
-        int tamanho = datas.size();
-        for (int i = 0; i<tamanho; i++){
-            Matrix[0][i] = datas.get(i)+"";
-            Matrix[1][i] = pessoas.get(i)+"";
-            Matrix[2][i] = valores.get(i)+"";
-        }
-        return Matrix;
-    }
-    
-   public String[][] getStats2(Filtro filtro, Jogador jogador, String paramentro)throws Exception {
-        this.conectarBanco();
-        String campeonato=filtro.getCampeonato();
-        //tring ano = filtro.getTemporada();
-        String clube = filtro.getClube();
-        String jog = jogador.getNome();
-        //this.query = "select * from "+campeonato+"_"+ano+" where "+paramentro+" = "+jogador+" " ;
-        this.query = "select * from brasileirao_2012 where nome = "+jogador+" UNION sele";
-        PreparedStatement exe = con.prepareStatement(query);
-        ResultSet retorno = exe.executeQuery();
-     
-        ArrayList valores = new ArrayList();
-        ArrayList datas = new ArrayList();
-        ArrayList pessoas = new ArrayList();
-
-        while (retorno.next()) {
-           pessoas.add(retorno.getString(2));
-           valores.add(retorno.getString(3));
-           datas.add(retorno.getString(4));
-        }
-        
-        this.desconectarBanco();
-        
-        String[][] Matrix = new String[3][datas.size()];
-        int tamanho = datas.size();
-        for (int i = 0; i<tamanho; i++){
-            Matrix[0][i] = datas.get(i)+"";
-            Matrix[1][i] = pessoas.get(i)+"";
-            Matrix[2][i] = valores.get(i)+"";
-        }
-        return Matrix;
-    }
-   
-    public Stats buscaTemporada (String nome, int temporada) throws Exception {
-        Stats stats = new Stats(temporada);
-        this.conectarBanco();
-        this.query = "select * from brasileirao_"+temporada+" where Nome = '"+nome+"'";
-        PreparedStatement stmt = con.prepareStatement(query);            
-        ResultSet rs1 = stmt.executeQuery();
-        while (rs1.next()) {
-            stats.setClube(rs1.getString(3));
-            stats.setPartidas(rs1.getInt(4));
-            stats.setGols(rs1.getInt(5));
-            stats.setAssist(rs1.getInt(6));
-            stats.setCarAma(rs1.getInt(7));
-            stats.setCarVer(rs1.getInt(8));
-        }
-        this.desconectarBanco();        
-        return stats;
-    }
-    
+    /*
+     * Retorna uma lista com os nomes dos jogadores referentes a pesquisa parcial
+     */
     public ArrayList buscaParcial (String nome) throws SQLException, Exception{
         this.conectarBanco();
         this.query = "select nome from jogador where nome like ?";
@@ -183,14 +104,18 @@ public class  ControleBanco{
         return listadeJogadores;
     }
     
-    public Jogador teste(Filtro filtro, Jogador jogador) throws SQLException, Exception{
-        this.conectarBanco();
+    /*
+     * Retorna o Jogador passado com todas suas estatísticas filtradras
+     */
+    public Jogador filtrarStats(Filtro filtro, Jogador jogador) throws SQLException, Exception{
+        this.conectarBanco();        
         for (int temp = filtro.getTemporada1(); temp<=filtro.getTemporada2(); temp++) {
             this.query = "select * from brasileirao_"+temp+" where Nome = '"+jogador.getNome()+"'";             
             PreparedStatement stmt = con.prepareStatement(query);            
             ResultSet rs1 = stmt.executeQuery();
             
             if (jogador.getPosicao().equals("Goleiro")){
+                Goleiro goleiro = (Goleiro) jogador;
                 StatsGol statsGol = new StatsGol(temp);
                 while (rs1.next()) {
                     statsGol.setClube(rs1.getString(3));
@@ -204,8 +129,9 @@ public class  ControleBanco{
                 }
                 statsGol.gerarMedias();
                 System.out.println(statsGol.getStats());
-                jogador.addEstatisticas(statsGol);
-                jogador.getEstatisticas();
+                goleiro.addEstatisticas(statsGol);
+                goleiro.getEstatisticas();
+                this.jogador = goleiro;
             } else {
                 Stats stats = new Stats(temp);
                 while (rs1.next()) {
@@ -220,11 +146,10 @@ public class  ControleBanco{
                 System.out.println(stats.getStats());
                 jogador.addEstatisticas(stats);
                 jogador.getEstatisticas();
-            }            
-            
+                this.jogador = jogador;
+            }        
         }
-        this.desconectarBanco();
-        return jogador;
-    }
+        return this.jogador;
+    } 
 }
 
