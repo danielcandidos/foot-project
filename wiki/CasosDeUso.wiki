@@ -100,24 +100,3 @@
 || 1.1 ||
 
 -----------------------
-
-==UC006 - Gerar Relatório==
-
-|| *Objetivo* || Gerar e visualizar relatório em PDF com as estatísticas de um ou dois jogadores. ||
-|| *Descrição* || O usuário poderá gerar um relatório que reunirá todos os dados e estatísticas do(s) jogador(es), segundo o filtro desejado. Podendo ser salvo em PDF. ||
-|| *Ator* || Usuário. ||
-|| *Prioridade* || Média. ||
-|| *Pré-condição* || Estar em uso a janela de dados individuais ou de comparação de jogadores. ||
-|| *Pós-condições* || Visualizar e salvar relatório em PDF. ||
-
-==Cenários principais de sucesso==
-
-|| *Usuário* ||
-|| 1 - O relatório é exibido. ||
-|| 2 - O relatório é salvo. ||
-
-
-|| *Fluxos alternativos* ||
-|| 1.1 ||
-
------------------------
