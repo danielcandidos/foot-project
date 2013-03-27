@@ -1,13 +1,1 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+||<a href="http://code.google.com/p/foot-project/">Início</a> || <a href="http://code.google.com/p/foot-project/wiki/Desenvolvedores">Desenvolvedores</a>||<a href="https://code.google.com/p/foot-project/wiki/Descricao">Descrição do Sistema</a>||<a href="http://code.google.com/p/foot-project/wiki/Requisitos">Requisitos</a>||<a href="http://code.google.com/p/foot-project/wiki/CasosDeUso">Casos de Uso</a>||<a href="http://code.google.com/p/foot-project/wiki/Diagramas">Diagramas</a>|| *Vídeos* ||
