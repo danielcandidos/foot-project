@@ -8,13 +8,13 @@ package visao;
  *
  * @author Daniel
  */
-public class FutBuscPlayers {
+public class Foot_Project {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        NewJFrame newJFrame = new NewJFrame();
+        JFInicial newJFrame = new JFInicial();
         newJFrame.setVisible(true);
     }
 }

@@ -6,18 +6,23 @@ package visao;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import negocio.ControleBanco;
+import java.util.Collections;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Daniel
  */
-public class NewJFrame extends javax.swing.JFrame {
-
+public class JFInicial extends javax.swing.JFrame {
+    static Collections col;
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
-        initComponents();
+    public JFInicial() {
+        initComponents();       
     }
 
     /**
@@ -65,7 +70,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jBSobre.setBackground(new java.awt.Color(0, 102, 0));
         jBSobre.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jBSobre.setForeground(new java.awt.Color(255, 255, 255));
-        jBSobre.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel\\Desktop\\7162_128x128.png")); // NOI18N
+        jBSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Sobre.png"))); // NOI18N
         jBSobre.setText("    Sobre");
         jBSobre.setBorder(null);
         jBSobre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -131,6 +136,18 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jBInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInicioActionPerformed
         JFPesquisa pesquisa = new JFPesquisa();
         pesquisa.setVisible(true);
+        try {
+            initComponents();
+            ControleBanco banco = new ControleBanco();
+            ArrayList buscaListaJog = banco.buscaListaJog();
+            col.sort(buscaListaJog);
+            pesquisa.jComboBox1.removeAllItems();
+            for (int i = 0; i<buscaListaJog.size(); i++) {
+                pesquisa.jComboBox1.addItem(buscaListaJog.get(i));
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(JFPesquisa.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_jBInicioActionPerformed
 
@@ -155,20 +172,20 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new JFInicial().setVisible(true);
             }
         });
     }
